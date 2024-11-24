@@ -1,0 +1,20 @@
+"export-plot data (NetLogo 6.4.0)"
+"vladviiob.nlogo"
+"11/23/2024 01:08:01:424 +0100"
+
+"MODEL SETTINGS"
+"compliance-rate","port-travel-chance","initial-infected","virus-cold-resistance","days-until-healthy","infections-threshold","select-infection-country?","isolation-compliance","cold-threshold","virus-heat-resistance","movement-radius","population-scaling","min-recovery-time","heat-threshold","airports-and-ports-enabled?","infection-chance","isolation-enabled?","recovery-time-mean","mortality-rate","recovery-time-sd","airport-travel-chance","num-airports","num-ports"
+"1","0.5","1","0.6","365","0.43","true","1","1","0.6","4","0.3","20","13","true","0.25","false","30","0.1","10","0.03","30","5"
+
+"""Climate Impact"""
+"x min","x max","y min","y max","autoplot?","current pen","legend open?","number of pens"
+"0","10","0","10","true","""hot""","false","3"
+
+"pen name","pen down?","mode","interval","color","x"
+"""hot""","true","0","1","25","0"
+"""cold""","true","0","1","5","0"
+"""moderate""","true","0","1","55","0"
+
+"""hot""",,,,"""cold""",,,,"""moderate"""
+"x","y","color","pen down?","x","y","color","pen down?","x","y","color","pen down?"
+"0","0","25","true","0","0","5","true","0","0","55","true"

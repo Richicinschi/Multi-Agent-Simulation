@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE experiments SYSTEM "behaviorspace.dtd">
+<experiments>
+  <experiment name="Transportation_Study" repetitions="30" runMetricsEveryStep="false">
+    <setup>setup
+set selected-country "Romania"
+set select-infection-country? true
+infect-initial-agents-in-country selected-country</setup>
+    <go>go</go>
+    <timeLimit steps="366"/>
+    <exitCondition>total-infected = 0 or ticks &gt;= 366</exitCondition>
+    <enumeratedValueSet variable="initial-infected">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="population-scaling">
+      <value value="0.3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="virus-heat-resistance">
+      <value value="0.6"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="virus-cold-resistance">
+      <value value="0.6"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="isolation-enabled?">
+      <value value="false"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="infection-chance">
+      <value value="0.25"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="mortality-rate">
+      <value value="0.1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="min-recovery-time">
+      <value value="20"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="recovery-time-mean">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="recovery-time-sd">
+      <value value="10"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="movement-radius">
+      <value value="4"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="heat-threshold">
+      <value value="13"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="cold-threshold">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="airports-and-ports-enabled?">
+      <value value="true"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="num-airports">
+      <value value="0"/>
+      <value value="5"/>
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="num-ports">
+      <value value="0"/>
+      <value value="5"/>
+      <value value="20"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="airport-travel-chance">
+      <value value="0.03"/>
+      <value value="0.5"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="port-travel-chance">
+      <value value="0.03"/>
+      <value value="0.5"/>
+    </enumeratedValueSet>
+  </experiment>
+</experiments>

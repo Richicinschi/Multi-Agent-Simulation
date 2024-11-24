@@ -1,0 +1,21 @@
+"export-plot data (NetLogo 6.4.0)"
+"vladviiob.nlogo"
+"11/22/2024 23:30:01:745 +0100"
+
+"MODEL SETTINGS"
+"compliance-rate","port-travel-chance","initial-infected","virus-cold-resistance","days-until-healthy","infections-threshold","select-infection-country?","isolation-compliance","cold-threshold","virus-heat-resistance","movement-radius","population-scaling","min-recovery-time","heat-threshold","airports-and-ports-enabled?","infection-chance","isolation-enabled?","recovery-time-mean","mortality-rate","recovery-time-sd","airport-travel-chance","num-airports","num-ports"
+"1","0.03","1","0.6","365","0.43","true","1","1","0.6","4","0.3","20","13","true","0.25","false","30","0.1","10","0.03","0","0"
+
+"""Disease Progression"""
+"x min","x max","y min","y max","autoplot?","current pen","legend open?","number of pens"
+"0","10","0","10","true","""recovered""","true","4"
+
+"pen name","pen down?","mode","interval","color","x"
+"""recovered""","true","0","1","5","0"
+"""infected""","true","0","1","15","0"
+"""dead""","true","0","1","0","0"
+"""healthy""","true","0","1","45","0"
+
+"""recovered""",,,,"""infected""",,,,"""dead""",,,,"""healthy"""
+"x","y","color","pen down?","x","y","color","pen down?","x","y","color","pen down?","x","y","color","pen down?"
+"0","0","5","true","0","0","15","true","0","0","0","true","0","0","45","true"
