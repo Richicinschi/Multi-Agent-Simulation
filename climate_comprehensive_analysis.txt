@@ -1,0 +1,79 @@
+COMPREHENSIVE CLIMATE RESISTANCE ANALYSIS
+========================================
+
+1. ANOVA RESULTS
+---------------
+                                         Df   Sum Sq Mean Sq F value   Pr(>F)    
+heat_resistance_cat                       2   728267  364134   1.523    0.219    
+cold_resistance_cat                       2  4831310 2415655  10.107 5.25e-05 ***
+heat_resistance_cat:cold_resistance_cat   4  1739118  434780   1.819    0.124    
+Residuals                               392 93692537  239012                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+# Effect Size for ANOVA (Type I)
+
+Parameter                               | Eta2 (partial) |       95% CI
+-----------------------------------------------------------------------
+heat_resistance_cat                     |       7.71e-03 | [0.00, 1.00]
+cold_resistance_cat                     |           0.05 | [0.02, 1.00]
+heat_resistance_cat:cold_resistance_cat |           0.02 | [0.00, 1.00]
+
+- One-sided CIs: upper bound fixed at [1.00].
+2. GAM ANALYSIS
+---------------
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+total_infected ~ s(heat_resistance, k = 4, bs = "cs") + s(cold_resistance, 
+    k = 4, bs = "cs") + ti(heat_resistance, cold_resistance, 
+    k = 3)
+
+Parametric coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   617.83      20.78   29.74   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Approximate significance of smooth terms:
+                                      edf Ref.df      F p-value    
+s(heat_resistance)                  1.884  3.000  2.119 0.02729 *  
+s(cold_resistance)                  2.952  3.000 56.632 < 2e-16 ***
+ti(heat_resistance,cold_resistance) 2.001  2.238  4.534 0.00753 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+R-sq.(adj) =  0.315   Deviance explained = 32.7%
+GCV = 1.7637e+05  Scale est. = 1.7293e+05  n = 401
+
+3. REGIONAL TRANSITIONS
+--------------------
+# A tibble: 9 × 6
+  heat_resistance_cat cold_resistance_cat first_hot_dominance first_cold_dominance transition_count
+  <fct>               <fct>                             <dbl>                <dbl>            <int>
+1 Low                 Low                                  NA                  110              913
+2 Low                 Medium                              174                  111              361
+3 Low                 High                                217                   91              288
+4 Medium              Low                                 119                  132              432
+5 Medium              Medium                               88                  116              175
+6 Medium              High                                161                  128              196
+7 High                Low                                 126                  156              470
+8 High                Medium                              106                   82              189
+9 High                High                                142                  108              198
+# ℹ 1 more variable: final_dominant <chr>
+
+4. CORRELATION ANALYSIS
+--------------------
+                              total_infected hot_proportion cold_proportion hot_region_transmission_rate
+total_infected                     1.0000000      0.2936211      -0.3391889                  0.955006066
+hot_proportion                     0.2936211      1.0000000      -0.2572363                  0.429679595
+cold_proportion                   -0.3391889     -0.2572363       1.0000000                 -0.309193616
+hot_region_transmission_rate       0.9550061      0.4296796      -0.3091936                  1.000000000
+cold_region_transmission_rate      0.1185982     -0.1629039       0.4720988                  0.006356349
+                              cold_region_transmission_rate
+total_infected                                  0.118598197
+hot_proportion                                 -0.162903853
+cold_proportion                                 0.472098799
+hot_region_transmission_rate                    0.006356349
+cold_region_transmission_rate                   1.000000000

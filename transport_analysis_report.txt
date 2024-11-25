@@ -1,0 +1,49 @@
+TRANSPORTATION INFRASTRUCTURE IMPACT ANALYSIS
+===========================================
+
+1. PEAK INFECTION ANALYSIS
+-------------------------
+                  Df    Sum Sq   Mean Sq F value Pr(>F)    
+transport_level    1 307759142 307759142   468.9 <2e-16 ***
+Residuals       1078 707560978    656365                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Effect Sizes:
+# Effect Size for ANOVA
+
+Parameter       | Eta2 |       95% CI
+-------------------------------------
+transport_level | 0.30 | [0.27, 1.00]
+
+- One-sided CIs: upper bound fixed at [1.00].
+2. TIME SERIES STATISTICS
+------------------------
+# A tibble: 2 × 5
+  transport_level     avg_spread_rate max_spread_rate avg_transport_efficiency avg_regional_spread
+  <chr>                         <dbl>           <dbl>                    <dbl>               <dbl>
+1 Extensive Transport          0.0109               4                  0.00692               0.253
+2 Limited Transport            0.0162               4                  0.00346               0.174
+
+3. CORRELATION ANALYSIS
+----------------------
+                        transport_usage total_infected cross_border_infections num_affected_countries
+transport_usage              1.00000000     0.04560695              0.18935931              0.1875984
+total_infected               0.04560695     1.00000000              0.49936000              0.7102375
+cross_border_infections      0.18935931     0.49936000              1.00000000              0.4821867
+num_affected_countries       0.18759837     0.71023754              0.48218671              1.0000000
+spread_rate                 -0.16414563    -0.09214486              0.03122219             -0.1839466
+                        spread_rate
+transport_usage         -0.16414563
+total_infected          -0.09214486
+cross_border_infections  0.03122219
+num_affected_countries  -0.18394659
+spread_rate              1.00000000
+
+4. SUMMARY STATISTICS BY TRANSPORT LEVEL
+-------------------------------------
+# A tibble: 2 × 6
+  transport_level    avg_peak avg_time_to_peak avg_max_cross_border avg_transport_usage avg_affected_countries
+  <chr>                 <dbl>            <dbl>                <dbl>               <dbl>                  <dbl>
+1 Extensive Transpo…    3856.             152.               0.0985               4601.                   9.01
+2 Limited Transport     2724.             226.               0.0418               1166.                  16.1 
